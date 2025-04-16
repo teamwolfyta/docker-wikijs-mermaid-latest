@@ -31,7 +31,9 @@ jobs:
             git apply "$patch"
           done
       
-      - run: ls -la
+      - run: |
+          cd wikijs
+          ls -la
 
       - uses: docker/login-action@v3
         with:
@@ -50,4 +52,4 @@ jobs:
           tags: |
             ghcr.io/teamwolfyta/wikijs-test:${{ inputs.version }}
             ghcr.io/teamwolfyta/wikijs-test:latest
-          file: dev/build/Dockerfile
+          file: ./dev/build/Dockerfile
