@@ -32,6 +32,7 @@ jobs:
           done
       
       - run: |
+          cd wikijs
           sudo apt-get install jq -y
           mv package.json pkg-temp.json
           jq --arg vs "${{ inputs.version }}" -r '. + {dev:false, version:$vs}' pkg-temp.json > package.json
@@ -46,8 +47,8 @@ jobs:
 
       - uses: docker/build-push-action@v5
         with:
-          context: .
-          file: dev/build/Dockerfile
+          context: wikijs
+          file: wikijs/dev/build/Dockerfile
           push: true
           tags: |
             ghcr.io/teamwolfyta/wikijs-test:${{ inputs.version }}
