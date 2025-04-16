@@ -31,6 +31,8 @@ jobs:
             git apply "$patch"
           done
       
+      - run: ls -la
+
       - uses: docker/login-action@v3
         with:
           registry: ghcr.io
