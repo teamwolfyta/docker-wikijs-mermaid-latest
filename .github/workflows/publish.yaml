@@ -31,10 +31,6 @@ jobs:
             git apply "$patch"
           done
       
-      - run: |
-          cd wikijs
-          ls -la
-
       - uses: docker/login-action@v3
         with:
           registry: ghcr.io
