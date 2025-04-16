@@ -52,4 +52,4 @@ jobs:
           tags: |
             ghcr.io/teamwolfyta/wikijs-test:${{ inputs.version }}
             ghcr.io/teamwolfyta/wikijs-test:latest
-          file: ./dev/build/Dockerfile
+          file: wikijs/dev/build/Dockerfile
