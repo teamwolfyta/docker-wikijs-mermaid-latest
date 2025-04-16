@@ -43,7 +43,7 @@ jobs:
       
       - uses: docker/build-push-action@v6
         with:
-          context: ./wikijs
+          context: wikijs
           push: true
           tags: |
             ghcr.io/teamwolfyta/wikijs-test:${{ inputs.version }}
